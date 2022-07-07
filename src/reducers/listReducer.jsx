@@ -12,7 +12,7 @@ export default function listReducer(state = initialState, action) {
     }
      case 'EDIT': {
       const { id, task, price } = action.payload;
-      return state.map((service) => service.id === id ? { ...service, task, price } : service);
+      return state.map(service => service.id === id ? { ...service, task, price } : service);
     }
     case 'REMOVE': {
       const {id} = action.payload;

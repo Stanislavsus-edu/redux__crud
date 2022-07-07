@@ -12,8 +12,8 @@ const initialState = {
 export default function formReducer(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE':
-      const {task, price} = action.payload;
-      return {...state, fields: { ...state.fields, [task]: price}};
+      const {name, value} = action.payload;
+      return {...state, fields: { ...state.fields, [name]: value}};
     case 'RESET':
       return initialState
     case 'CHANGEEDIT': {
@@ -22,6 +22,7 @@ export default function formReducer(state = initialState, action) {
     }
     case 'DELETEEDIT':
       const { id } = action.payload;
+      console.log('hhh')
       if (id === state.edit.id) {
         return { ...state, edit: { isEdit: false, id: '' } };
       } 

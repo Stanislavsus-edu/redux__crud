@@ -14,8 +14,8 @@ export function reset() {
   return {type: 'RESET'};
 }
 
-export function change(task, price) {
-  return {type: 'CHANGE', payload: {task, price}}
+export function change(name, value) {
+  return {type: 'CHANGE', payload: {name, value}}
 }
 
 export function changeFilter(value) {
